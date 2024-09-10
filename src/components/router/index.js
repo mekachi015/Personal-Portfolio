@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router"; // Only keep used imports
 
 // Import the correct components
-import home from "../views/home vue/home.vue";
-import about from "../views/about vue/about.vue";
-import project from "../views/projects/project.vue"; // Use the updated multi-word name
-import contact from "../views/contact/contact.vue";
+import HomeView from "../views/home.vue";
+import AboutView from "../views/about.vue";
+import project from "../views/project.vue"; // Use the updated multi-word name
+import contact from "../views/contact.vue";
 
 const routes = [
-    { path: '/', name: 'HomeView', component: home },
-    { path: '/about', name: 'AboutView', component: about },
+    { path: '/', name: 'HomeView', component: HomeView },
+    { path: '/about', name: 'AboutView', component: AboutView },
     { path: '/projects', name: 'ProjectView', component: project }, // Use the correct name
     { path: '/contact', name: 'ContactView', component: contact }
 ];
