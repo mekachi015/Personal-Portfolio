@@ -16,9 +16,8 @@
 
     <HomeView/>
     <AboutView/>
-    <ContactView/>
     <ProjectView/>
-    <!-- <AboutView/> -->
+    <ContactView/>
   </div>
 </template>
 
