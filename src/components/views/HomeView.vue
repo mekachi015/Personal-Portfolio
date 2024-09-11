@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <h1>Hello this is the home page</h1>
         <p>I am a 25-year-old full-stack intern with a fervent passion for both technology and sports. Currently, I am
@@ -22,11 +21,7 @@
         <p>Balancing my technical skills with my interests, I am dedicated to contributing to innovative projects,
             collaborating with diverse teams, and continuously evolving as a developer. I am driven by the pursuit of
             excellence and the desire to make a meaningful impact in the tech industry.
-        </p>
-
-       
-       
-       
+        </p>  
     </div>
 
 </template>
