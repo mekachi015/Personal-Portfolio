@@ -1,16 +1,23 @@
 <template>
   <div id="app">
     <nav>
-      <ul>
+      <!-- <ul>
         <li><a><router-link :to="{ name: 'Home' }">Home</router-link></a></li>
         <li><a><router-link :to="{ name: 'About' }">About</router-link></a></li>
         <li><a><router-link :to="{ name: 'Project' }">Projects</router-link></a></li>
         <li><a><router-link :to="{ name: 'Contact' }">Contact</router-link></a></li>
       
-      </ul>
+      </ul> -->
+
+        <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
+        <li><router-link :to="{ name: 'About' }">About</router-link></li>
+        <li><router-link :to="{ name: 'Project' }">Projects</router-link></li>
+        <li><router-link :to="{ name: 'Contact' }">Contact</router-link></li>
+
+      
     </nav>
     
-   
+
     <!-- This is where the current route component will be rendered -->
     <router-view></router-view>
 
@@ -35,6 +42,15 @@ export default {
     AboutView,
     ContactView,
     ProjectView
+  },
+
+  methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
   }
 };
 </script>

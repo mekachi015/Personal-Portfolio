@@ -3,26 +3,32 @@
       <nav class="navbar">
         <ul class="nav-list">
           <li class="nav-item" @click="scrollToSection('home')">Home</li>
-          <li class="nav-item" @click="scrollToSection('about')">About</li>
+          <li class="nav-item" @click="scrollToSection('/about')">About</li>
           <li class="nav-item" @click="scrollToSection('project')">Project</li>
           <li class="nav-item" @click="scrollToSection('contact')">Contact</li>
         </ul>
       </nav>
+
+    <section id="home">Home Section</section>
+    <section id="about">About Section</section>
+    <section id="project">Project Section</section>
+    <section id="contact">Contact Section</section>
     </div>
   </template>
   
   <script>
-  export default {
-    methods: {
-      scrollToSection(sectionId) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+export default {
+  methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   }
-  </script>
+};
+</script>
+
   
   <style scoped>
   /* Basic styling for the navbar */
