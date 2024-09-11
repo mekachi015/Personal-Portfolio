@@ -1,21 +1,40 @@
-import { createRouter, createWebHistory } from "vue-router"; // Only keep used imports
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import AboutView from '../views/AboutView.vue';
+import ContactView from '../views/ContactView.vue';
+import ProjectView from '../views/ProjectView.vue';
 
-// Import the correct components
-import HomeView from "../views/home.vue";
-import AboutView from "../views/about.vue";
-import project from "../views/project.vue"; // Use the updated multi-word name
-import contact from "../views/contact.vue";
-
+// Define routes
 const routes = [
-    { path: '/', name: 'HomeView', component: HomeView },
-    { path: '/about', name: 'AboutView', component: AboutView },
-    { path: '/projects', name: 'ProjectView', component: project }, // Use the correct name
-    { path: '/contact', name: 'ContactView', component: contact }
+  {
+    path: '/',
+    name: 'Home',
+    component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutView
+  },
+  {
+    path: '/project',
+    name: 'Project',
+    component: ProjectView
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: ContactView
+  },
+
+
+
 ];
 
+// Create the router instance and pass the 'routes' array
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL), // Remove unused createWebHashHistory
-    routes,
+  history: createWebHistory(process.env.BASE_URL),
+  routes
 });
 
 export default router;
