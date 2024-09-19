@@ -2,17 +2,23 @@
   <div>
     <nav class="navbar">
       <ul class="nav-list">
-        <li class="nav-item" @click="scrollToSection('home')">Home</li>
-        <li class="nav-item" @click="scrollToSection('about')">About</li>
-        <li class="nav-item" @click="scrollToSection('project')">Projects</li>
-        <li class="nav-item" @click="scrollToSection('contact')">Contact</li>
+        <li class="nav-item" @mouseover="animateBounce"> 
+          <router-link to="/" exact>Home</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/about">About</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/project">Projects</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/skills">Skills</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/contact">Contact</router-link>
+        </li>
       </ul>
     </nav>
-
-    <section id="home">Home Section</section>
-    <section id="about">About Section</section>
-    <section id="project">Project Section</section>
-    <section id="contact">Contact Section</section>
   </div>
 </template>
 
@@ -24,17 +30,24 @@ export default {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    },
+    animateBounce(event) {
+      const target = event.currentTarget;
+      target.classList.add('bounce');
+      setTimeout(() => {
+        target.classList.remove('bounce');
+      }, 700); // Duration of the bounce effect
     }
   }
 };
 </script>
 
-<style>
-  /* Navbar styling */
+<style scoped>
+/* Navbar styling */
 .navbar {
-  background-color: #f5f5f5; /* Light, minimalist background */
+  background-color: #ffebcd; /* Warm off-white background */
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -43,7 +56,7 @@ export default {
 
 /* Hover effect for the navbar */
 .navbar:hover {
-  background-color: #eaeaea; /* Slight hover effect */
+  background-color: #f8d8b5; /* Slightly darker on hover */
 }
 
 /* Navigation list styling */
@@ -58,21 +71,40 @@ export default {
 
 /* Individual nav items */
 .nav-item {
-  margin: 0 20px;
-  color: #333; /* Muted gray for text */
-  cursor: pointer;
-  font-size: 16px;
-  font-family: 'Lato', sans-serif; /* Clean sans-serif font */
+  margin: 0 25px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.05em;
   transition: color 0.3s ease, border-bottom 0.3s ease;
   position: relative;
 }
 
+/* Link color for router links */
+.nav-item a {
+  color: #d32f2f; /* Bold red color */
+  text-decoration: none; /* Remove underline from links */
+}
+
 /* Hover effects for nav items */
-.nav-item:hover {
-  color: #0056b3; /* Subtle blue accent for hover */
-  border-bottom: 2px solid #0056b3;
+.nav-item:hover a {
+  color: #ffcc00; /* Change to gold on hover */
+}
+
+/* Bounce animation */
+.bounce {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Underline animation for nav items */
@@ -83,7 +115,7 @@ export default {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #0056b3;
+  background-color: #ffcc00; /* Gold underline */
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -93,46 +125,4 @@ export default {
   visibility: visible;
   transform: scaleX(1);
 }
-
-/* Section styles */
-section {
-  padding: 100px 20px;
-  color: #333;
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  text-align: center;
-}
-
-#home {
-  background-color: #fdfdfd; /* Off-white for minimalist feel */
-}
-
-#about {
-  background-color: #f9f9f9; /* Slight gray for contrast */
-}
-
-#project {
-  background-color: #f0f0f0; /* Deeper gray */
-}
-
-#contact {
-  background-color: #eaeaea; /* Balanced neutral */
-}
-
-/* Typography for sections */
-h1, h2 {
-  font-family: 'Lora', serif; /* Elegant serif font for headers */
-  color: #333;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 1.8em;
-  margin-bottom: 15px;
-}
-
 </style>

@@ -1,24 +1,18 @@
 <template>
   <div id="app">
-    <nav class="navbar">
-      <ul class="navbar-menu">
-        <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
-        <li><router-link :to="{ name: 'About' }">About</router-link></li>
-        <li><router-link :to="{ name: 'Project' }">Projects</router-link></li>
-        <li><router-link :to="{ name: 'SkillProgress' }">Skills</router-link></li>
-        <li><router-link :to="{ name: 'Contact' }">Contact</router-link></li>
-        <li><router-link :to="{ name: 'Languages' }">Languages</router-link></li>
-        
-      </ul>
-    </nav>
-    <!-- This is where the current route component will be rendered -->
+    <navbarView />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import navbarView from './components/built component/navbarView.vue';
+
 export default {
   name: 'App',
+  components: {
+    navbarView,
+  },
 };
 </script>
 
