@@ -2,17 +2,23 @@
   <div>
     <nav class="navbar">
       <ul class="nav-list">
-        <li class="nav-item" @click="scrollToSection('home')">Home</li>
-        <li class="nav-item" @click="scrollToSection('about')">About</li>
-        <li class="nav-item" @click="scrollToSection('project')">Projects</li>
-        <li class="nav-item" @click="scrollToSection('contact')">Contact</li>
+        <li class="nav-item" @mouseover="animateBounce"> 
+          <router-link to="/" exact>Home</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/about">About</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/project">Projects</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/skills">Skills</router-link>
+        </li>
+        <li class="nav-item" @mouseover="animateBounce">
+          <router-link to="/contact">Contact</router-link>
+        </li>
       </ul>
     </nav>
-
-    <section id="home">Home Section</section>
-    <section id="about">About Section</section>
-    <section id="project">Project Section</section>
-    <section id="contact">Contact Section</section>
   </div>
 </template>
 
@@ -24,6 +30,13 @@ export default {
       if (section) {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+    },
+    animateBounce(event) {
+      const target = event.currentTarget;
+      target.classList.add('bounce');
+      setTimeout(() => {
+        target.classList.remove('bounce');
+      }, 700); // Duration of the bounce effect
     }
   }
 };
@@ -32,7 +45,7 @@ export default {
 <style scoped>
 /* Navbar styling */
 .navbar {
-  background-color: #1a1a1a; /* Dark, elegant background */
+  background-color: #ffebcd; /* Warm off-white background */
   padding: 15px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
@@ -43,7 +56,7 @@ export default {
 
 /* Hover effect for the navbar */
 .navbar:hover {
-  background-color: #333;
+  background-color: #f8d8b5; /* Slightly darker on hover */
 }
 
 /* Navigation list styling */
@@ -59,8 +72,6 @@ export default {
 /* Individual nav items */
 .nav-item {
   margin: 0 25px;
-  color: #f2f2f2;
-  cursor: pointer;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -68,10 +79,32 @@ export default {
   position: relative;
 }
 
+/* Link color for router links */
+.nav-item a {
+  color: #d32f2f; /* Bold red color */
+  text-decoration: none; /* Remove underline from links */
+}
+
 /* Hover effects for nav items */
-.nav-item:hover {
-  color: #ffcc00;
-  border-bottom: 2px solid #ffcc00;
+.nav-item:hover a {
+  color: #ffcc00; /* Change to gold on hover */
+}
+
+/* Bounce animation */
+.bounce {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Underline animation for nav items */
@@ -82,7 +115,7 @@ export default {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #ffcc00;
+  background-color: #ffcc00; /* Gold underline */
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -91,28 +124,5 @@ export default {
 .nav-item:hover::before {
   visibility: visible;
   transform: scaleX(1);
-}
-
-/* Section styles */
-section {
-  padding: 80px 20px;
-  color: #fff;
-  text-align: center;
-}
-
-#home {
-  background-color: #1e1e1e;
-}
-
-#about {
-  background-color: #2a2a2a;
-}
-
-#project {
-  background-color: #373737;
-}
-
-#contact {
-  background-color: #444444;
 }
 </style>
