@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ContactView from '../views/ContactView.vue';
 import ProjectView from '../views/ProjectView.vue';
+import StackView from '../views/StackView.vue';
+import LanguagesView from '../views/LanguagesView.vue';
 
 // Define routes
 const routes = [
@@ -27,6 +29,17 @@ const routes = [
     component: ContactView
   },
 
+  {
+    path: '/skills',
+    name: 'SkillProgress',
+    component: StackView
+  },
+
+  {
+    path: '/languages',
+    name: 'Languages',
+    component: LanguagesView
+  }
 
 
 ];

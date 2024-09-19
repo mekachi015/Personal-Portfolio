@@ -5,7 +5,10 @@
         <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
         <li><router-link :to="{ name: 'About' }">About</router-link></li>
         <li><router-link :to="{ name: 'Project' }">Projects</router-link></li>
+        <li><router-link :to="{ name: 'SkillProgress' }">Skills</router-link></li>
         <li><router-link :to="{ name: 'Contact' }">Contact</router-link></li>
+        <li><router-link :to="{ name: 'Languages' }">Languages</router-link></li>
+        
       </ul>
     </nav>
     <!-- This is where the current route component will be rendered -->
