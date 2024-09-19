@@ -1,10 +1,11 @@
 <template>
     <div class="about-container">
-      <h1>Hello, who is katlego?</h1>
+      <h1>Katlego Makoti</h1>
+      <h2>Aspiring Developer</h2>
       <div class="content">
-        <p class="fade-in">I am Katlego Makoti a 25-year-old full-stack intern with a passion for both technology and sports. Currently, I am immersing myself in full-stack development, building dynamic, user-centric applications. My journey in IT began in high school and continued through varsity, where I gained comprehensive knowledge in programming languages and frameworks.</p>
+        <p class="fade-in">I am Katlego Makoti am a 25-year-old, participating in a full stack development learnership,with a passion for both technology and sports. Currently, I am immersing myself in full-stack development, building dynamic, user-centric applications. My journey in IT began in high school and continued through varsity, where I gained comprehensive knowledge in programming languages and frameworks.</p>
   
-        <p class="fade-in delay-1">Originally from Limpopo, I moved to pursue opportunities that would enhance my skills and broaden my horizons. My role as a full-stack intern reflects my dedication to growth in the tech field. I am excited about the Shaaper Learnership, which aligns perfectly with my career goals.</p>
+        <p class="fade-in delay-1">Originally from Limpopo, I moved to pursue opportunities that would enhance my skills and broaden my horizons. My role as a full-stack learner, reflects my dedication to growth in the tech field. I am excited about the Shaaper Learnership, which aligns perfectly with my career goals.</p>
   
         <p class="fade-in delay-2">Outside of work, I'm an avid gamer and basketball player. Gaming helps me understand complex systems, while basketball has taught me teamwork, strategy, and resilience, qualities I bring into my work environment.</p>
   

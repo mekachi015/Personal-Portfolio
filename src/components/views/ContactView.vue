@@ -1,7 +1,3 @@
-<script setup lang="ts">
- // Adjust the path if necessary
-</script>
-
 <template>
   <div class="contact-page">
     <h1 class="title">Hello, this is the Contact page</h1>
@@ -34,7 +30,7 @@
     </div>
 
     <!-- Contact form component -->
-    <QueryForm />
+    
   </div>
 </template>
 
