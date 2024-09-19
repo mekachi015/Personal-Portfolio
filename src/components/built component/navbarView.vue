@@ -29,12 +29,12 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Navbar styling */
+<style>
+  /* Navbar styling */
 .navbar {
-  background-color: #1a1a1a; /* Dark, elegant background */
+  background-color: #f5f5f5; /* Light, minimalist background */
   padding: 15px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -43,7 +43,7 @@ export default {
 
 /* Hover effect for the navbar */
 .navbar:hover {
-  background-color: #333;
+  background-color: #eaeaea; /* Slight hover effect */
 }
 
 /* Navigation list styling */
@@ -58,10 +58,11 @@ export default {
 
 /* Individual nav items */
 .nav-item {
-  margin: 0 25px;
-  color: #f2f2f2;
+  margin: 0 20px;
+  color: #333; /* Muted gray for text */
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif; /* Clean sans-serif font */
   font-weight: 600;
   letter-spacing: 0.05em;
   transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -70,8 +71,8 @@ export default {
 
 /* Hover effects for nav items */
 .nav-item:hover {
-  color: #ffcc00;
-  border-bottom: 2px solid #ffcc00;
+  color: #0056b3; /* Subtle blue accent for hover */
+  border-bottom: 2px solid #0056b3;
 }
 
 /* Underline animation for nav items */
@@ -82,7 +83,7 @@ export default {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #ffcc00;
+  background-color: #0056b3;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -95,24 +96,43 @@ export default {
 
 /* Section styles */
 section {
-  padding: 80px 20px;
-  color: #fff;
+  padding: 100px 20px;
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
   text-align: center;
 }
 
 #home {
-  background-color: #1e1e1e;
+  background-color: #fdfdfd; /* Off-white for minimalist feel */
 }
 
 #about {
-  background-color: #2a2a2a;
+  background-color: #f9f9f9; /* Slight gray for contrast */
 }
 
 #project {
-  background-color: #373737;
+  background-color: #f0f0f0; /* Deeper gray */
 }
 
 #contact {
-  background-color: #444444;
+  background-color: #eaeaea; /* Balanced neutral */
 }
+
+/* Typography for sections */
+h1, h2 {
+  font-family: 'Lora', serif; /* Elegant serif font for headers */
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
 </style>
